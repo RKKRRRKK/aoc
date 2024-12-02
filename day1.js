@@ -39,13 +39,13 @@ for (let i = 0; i < column2.length; i++) {
     column2_obj[column2[i]]++ 
 }
 
-let similarity_array = column1.map((number) =>  number * column2_obj[number]  )
+let similarity_array = column1.map((number) =>  number *   (column2_obj[number] ?? 0))
 
-for (let i = 0; i < similarity_array.length; i++) {
-  if (isNaN(similarity_array[i])) (
-    similarity_array[i] = 0
-  )
-}
+// for (let i = 0; i < similarity_array.length; i++) {
+//   if (isNaN(similarity_array[i])) (
+//     similarity_array[i] = 0
+//   )
+// }
 
 let simil = similarity_array.reduce((x, y) => x + y, 0)
 
